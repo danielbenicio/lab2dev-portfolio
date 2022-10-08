@@ -16,7 +16,7 @@ const pages: React.FC = () => {
           rel="stylesheet"
         />
       </Head>
-      <body>
+      <body className="bg-background">
         <Main />
         <NextScript />
       </body>

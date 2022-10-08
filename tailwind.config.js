@@ -2,7 +2,17 @@
 module.exports = {
   content: ['./src/**/*.tsx', './index.html'],
   theme: {
-    extend: {},
+    fontFamily: {
+      sans: ['Poppins', 'sans-serif'],
+    },
+    extend: {
+      colors: {
+        background: '#F8F8F8',
+        'lab2dev-purple-900': '#3D1A4A',
+        'lab2dev-purple-700': '#712782',
+        'red-450': '#FF0054',
+      },
+    },
   },
   plugins: [],
 }
