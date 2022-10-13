@@ -12,6 +12,9 @@ module.exports = {
         'lab2dev-purple-700': '#712782',
         'red-450': '#FF0054',
       },
+      boxShadow: {
+        card: '0px 0px 4px rgba(0, 0, 0, 0.15)',
+      },
     },
   },
   plugins: [],
