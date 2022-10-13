@@ -18,7 +18,7 @@ const Home: React.FC = () => {
 
   return (
     <>
-      <div className="px-36 pt-10">
+      <div className="2xl:px-20 px-36 pt-10">
         <Header />
         <IntroductionContainer />
         <GoldPartnerContainer />

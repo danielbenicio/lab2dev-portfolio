@@ -21,13 +21,13 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
   description,
 }) => {
   return (
-    <div className="shadow-card rounded !w-[438px] mt-14 h-[42.4rem] flex flex-col">
+    <div className="shadow-card rounded w-[27.375rem] h-[42.4rem] flex flex-col 2xl:w-[25.8rem] 2xl:h-[38.5rem]">
       <Image
         src={PROJECT_IMAGES[projectName]}
         alt="project image"
         className="w-full"
       />
-      <div className="px-4 pb-7 pt-3">
+      <div className="px-4 pt-3">
         <span className="text-red-450 font-medium text-sm">
           Tecnologias: {technologiesUsed}
         </span>
@@ -35,11 +35,14 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
           {projectName}
         </h1>
         <div className="mt-6">
-          <span className="mt-7 opacity-60 font-normal">{description}</span>
+          <span className="mt-7 opacity-60 font-normal 2xl:text-sm">
+            {description}
+          </span>
         </div>
         <button
           className="mt-4 flex justify-center items-center gap-4 w-full py-4 border rounded-sm
-          transition-color duration-500 hover:bg-lab2dev-purple-900 hover:rounded hover:text-white"
+          transition-color duration-500 hover:bg-lab2dev-purple-900 hover:rounded hover:text-white
+          2xl:py-3 2xl:text-sm"
         >
           <span>Mais informações</span>
           <ArrowRight size={20} />

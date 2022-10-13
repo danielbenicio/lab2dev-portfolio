@@ -31,36 +31,72 @@ export const CompaniesContainer: React.FC = () => {
       <Swiper
         navigation={true}
         modules={[Navigation]}
-        className="mt-28 flex items-center justify-center"
+        className="mt-28 flex items-center justify-center 2xl:mt-20"
         loop={true}
       >
-        <SwiperSlide className="flex items-center justify-center gap-36">
-          <Image src={whirlpoolLogo} alt="whirlpool logo" />
-          <Image src={mercedesLogo} alt="mercedes logo" className="w-20" />
+        <SwiperSlide className="flex items-center justify-center gap-36 2xl:gap-24">
+          <Image
+            src={whirlpoolLogo}
+            alt="whirlpool logo"
+            className="2xl:w-24"
+          />
+          <Image
+            src={mercedesLogo}
+            alt="mercedes logo"
+            className="w-20 2xl:w-20"
+          />
           <Image src={transpetroLogo} alt="transpetro logo" className="w-24" />
           <Image src={gerdauLogo} alt="gerdau logo" />
           <Image
             src={piracanjubaLogo}
             alt="piracanjuba logo"
-            className="w-24"
+            className="w-24 2xl:hidden"
           />
           <Image src={uolLogo} alt="uol logo" />
         </SwiperSlide>
-        <SwiperSlide className="flex items-center justify-center gap-32">
+        <SwiperSlide className="flex items-center justify-center gap-32 2xl:gap-24">
           <Image src={hidroviasLogo} alt="hidrovias logo" className="w-52" />
           <Image src={atvosLogo} alt="atvos logo" />
-          <Image src={engieLogo} alt="engie logo" className="w-32" />
+          <Image src={engieLogo} alt="engie logo" className="w-32 2xl:hidden" />
           <Image src={comporteLogo} alt="comporte logo" className="w-28" />
           <Image src={iharaLogo} alt="ihara logo" className="w-20" />
           <Image src={lafargeLogo} alt="lafarge logo" className="w-20" />
         </SwiperSlide>
-        <SwiperSlide className="flex items-center justify-center gap-32">
+        <SwiperSlide className="flex items-center justify-center gap-32 2xl:gap-24">
           <Image src={swiftLogo} alt="swift logo" />
           <Image src={einsteinLogo} alt="einstein logo" />
           <Image src={magnesitaLogo} alt="magnesita logo" className="w-20" />
           <Image src={plusoftLogo} alt="plusoft logo" className="w-32" />
-          <Image src={comporteLogo} alt="comporte logo" className="w-28" />
+          <Image
+            src={comporteLogo}
+            alt="comporte logo"
+            className="w-28 2xl:hidden"
+          />
           <Image src={votorantimLogo} alt="votorantim logo" className="w-20" />
+        </SwiperSlide>
+        <SwiperSlide className="flex items-center justify-center gap-32 2xl:gap-24">
+          <Image
+            src={piracanjubaLogo}
+            alt="piracanjuba logo"
+            className="w-24"
+          />
+          <Image src={comporteLogo} alt="comporte logo" className="w-28" />
+          <Image src={engieLogo} alt="engie logo" className="w-32 2xl:w-28" />
+          <Image
+            src={whirlpoolLogo}
+            alt="whirlpool logo"
+            className="2xl:w-24"
+          />
+          <Image
+            src={mercedesLogo}
+            alt="mercedes logo"
+            className="w-20 2xl:w-20"
+          />
+          <Image
+            src={transpetroLogo}
+            alt="transpetro logo"
+            className="w-24 2xl:hidden"
+          />
         </SwiperSlide>
       </Swiper>
     </div>
