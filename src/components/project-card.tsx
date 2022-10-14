@@ -1,31 +1,27 @@
 import React from 'react'
-import Image from 'next/future/image'
 
 import { ArrowRight } from 'phosphor-react'
-
-import { PROJECT_IMAGES } from '../shared/PROJECT_IMAGES'
-
 interface ProjectCardProps {
-  projectName:
-    | 'Hidrovias Einstein'
-    | 'Portal Lab2Dev'
-    | 'Monitor Swift'
-    | 'Whirlpool Pricing Spring Boot'
+  frontCover: string
+  projectName: string
   technologiesUsed: string
   description: string
 }
 
 export const ProjectCard: React.FC<ProjectCardProps> = ({
+  frontCover,
   projectName,
   technologiesUsed,
   description,
 }) => {
   return (
     <div className="shadow-card rounded w-[27.375rem] h-[42.4rem] flex flex-col 2xl:w-[25.8rem] 2xl:h-[38.5rem]">
-      <Image
-        src={PROJECT_IMAGES[projectName]}
+      <img
+        src={frontCover}
         alt="project image"
-        className="w-full"
+        className="w-[500px] h-[294px] rounded-tr rounded-tl 2xl:h-[274px]"
+        width={20}
+        height={20}
       />
       <div className="px-4 pt-3">
         <span className="text-red-450 font-medium text-sm">

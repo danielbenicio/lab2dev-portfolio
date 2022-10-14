@@ -11,7 +11,15 @@ import { FreeMode, Pagination } from 'swiper'
 
 import { ProjectCard } from '../project-card'
 
-export const PortfolioContainer: React.FC = () => {
+import { GoogleSheetResponse } from '../../model/GoogleSheetResponse'
+
+interface PortfolioContainerProps {
+  projects: GoogleSheetResponse[]
+}
+
+export const PortfolioContainer: React.FC<PortfolioContainerProps> = ({
+  projects,
+}) => {
   return (
     <div className="mt-24 pl-36 2xl:pl-20 2xl:mt-20" id="portfolio-container">
       <h1 className="text-lab2dev-purple-900 font-medium text-5xl leading-[3.75rem] mb-1 2xl:text-4xl">
@@ -23,6 +31,7 @@ export const PortfolioContainer: React.FC = () => {
       </span>
       <Swiper
         freeMode={true}
+        slidesPerView={3}
         pagination={{
           clickable: true,
         }}
@@ -30,113 +39,21 @@ export const PortfolioContainer: React.FC = () => {
         loop={true}
         className="flex h-[48rem] 2xl:h-[45rem] mt-8 2xl:mt-0"
       >
-        <SwiperSlide className="flex gap-36 w-full items-center 2xl:gap-7 2xl:mr-4 2xl:ml-4">
-          <ProjectCard
-            projectName="Hidrovias Einstein"
-            technologiesUsed="SAP UI5, SAP HANA & Python"
-            description="Hidrovias ipsum dolor sit amet, consectetur adipiscing elit,
-          sed do eiusmod tempor incididunt ut labore et dolore
-          magna aliqua. Ut enim ad minim veniam, quis nostrud
-          exercitation ullamco  laboris nisi ut aliquip ex ea commodo
-          consequat. Duis aute irure dolor in reprehenderit in volupt
-          velit esse cillum dolore eu fugiat nulla pariatur. Excepteur
-          sint occaecat."
-          />
-          <ProjectCard
-            projectName="Portal Lab2Dev"
-            technologiesUsed="SAP UI5, SAP HANA & Python"
-            description="Hidrovias ipsum dolor sit amet, consectetur adipiscing elit,
-          sed do eiusmod tempor incididunt ut labore et dolore
-          magna aliqua. Ut enim ad minim veniam, quis nostrud
-          exercitation ullamco  laboris nisi ut aliquip ex ea commodo
-          consequat. Duis aute irure dolor in reprehenderit in volupt
-          velit esse cillum dolore eu fugiat nulla pariatur. Excepteur
-          sint occaecat."
-          />
-          <ProjectCard
-            projectName="Monitor Swift"
-            technologiesUsed="SAP UI5, SAP HANA & Python"
-            description="Hidrovias ipsum dolor sit amet, consectetur adipiscing elit,
-          sed do eiusmod tempor incididunt ut labore et dolore
-          magna aliqua. Ut enim ad minim veniam, quis nostrud
-          exercitation ullamco  laboris nisi ut aliquip ex ea commodo
-          consequat. Duis aute irure dolor in reprehenderit in volupt
-          velit esse cillum dolore eu fugiat nulla pariatur. Excepteur
-          sint occaecat."
-          />
-        </SwiperSlide>
-
-        <SwiperSlide className="flex gap-36 w-full items-center 2xl:gap-7">
-          <ProjectCard
-            projectName="Hidrovias Einstein"
-            technologiesUsed="SAP UI5, SAP HANA & Python"
-            description="Hidrovias ipsum dolor sit amet, consectetur adipiscing elit,
-          sed do eiusmod tempor incididunt ut labore et dolore
-          magna aliqua. Ut enim ad minim veniam, quis nostrud
-          exercitation ullamco  laboris nisi ut aliquip ex ea commodo
-          consequat. Duis aute irure dolor in reprehenderit in volupt
-          velit esse cillum dolore eu fugiat nulla pariatur. Excepteur
-          sint occaecat."
-          />
-          <ProjectCard
-            projectName="Portal Lab2Dev"
-            technologiesUsed="SAP UI5, SAP HANA & Python"
-            description="Hidrovias ipsum dolor sit amet, consectetur adipiscing elit,
-          sed do eiusmod tempor incididunt ut labore et dolore
-          magna aliqua. Ut enim ad minim veniam, quis nostrud
-          exercitation ullamco  laboris nisi ut aliquip ex ea commodo
-          consequat. Duis aute irure dolor in reprehenderit in volupt
-          velit esse cillum dolore eu fugiat nulla pariatur. Excepteur
-          sint occaecat."
-          />
-          <ProjectCard
-            projectName="Monitor Swift"
-            technologiesUsed="SAP UI5, SAP HANA & Python"
-            description="Hidrovias ipsum dolor sit amet, consectetur adipiscing elit,
-          sed do eiusmod tempor incididunt ut labore et dolore
-          magna aliqua. Ut enim ad minim veniam, quis nostrud
-          exercitation ullamco  laboris nisi ut aliquip ex ea commodo
-          consequat. Duis aute irure dolor in reprehenderit in volupt
-          velit esse cillum dolore eu fugiat nulla pariatur. Excepteur
-          sint occaecat."
-          />
-        </SwiperSlide>
-
-        <SwiperSlide className="flex gap-36 w-full items-center 2xl:gap-7 2xl:mr-4 2xl:ml-4">
-          <ProjectCard
-            projectName="Hidrovias Einstein"
-            technologiesUsed="SAP UI5, SAP HANA & Python"
-            description="Hidrovias ipsum dolor sit amet, consectetur adipiscing elit,
-          sed do eiusmod tempor incididunt ut labore et dolore
-          magna aliqua. Ut enim ad minim veniam, quis nostrud
-          exercitation ullamco  laboris nisi ut aliquip ex ea commodo
-          consequat. Duis aute irure dolor in reprehenderit in volupt
-          velit esse cillum dolore eu fugiat nulla pariatur. Excepteur
-          sint occaecat."
-          />
-          <ProjectCard
-            projectName="Portal Lab2Dev"
-            technologiesUsed="SAP UI5, SAP HANA & Python"
-            description="Hidrovias ipsum dolor sit amet, consectetur adipiscing elit,
-          sed do eiusmod tempor incididunt ut labore et dolore
-          magna aliqua. Ut enim ad minim veniam, quis nostrud
-          exercitation ullamco  laboris nisi ut aliquip ex ea commodo
-          consequat. Duis aute irure dolor in reprehenderit in volupt
-          velit esse cillum dolore eu fugiat nulla pariatur. Excepteur
-          sint occaecat."
-          />
-          <ProjectCard
-            projectName="Monitor Swift"
-            technologiesUsed="SAP UI5, SAP HANA & Python"
-            description="Hidrovias ipsum dolor sit amet, consectetur adipiscing elit,
-          sed do eiusmod tempor incididunt ut labore et dolore
-          magna aliqua. Ut enim ad minim veniam, quis nostrud
-          exercitation ullamco  laboris nisi ut aliquip ex ea commodo
-          consequat. Duis aute irure dolor in reprehenderit in volupt
-          velit esse cillum dolore eu fugiat nulla pariatur. Excepteur
-          sint occaecat."
-          />
-        </SwiperSlide>
+        {projects.map((project) => {
+          return (
+            <SwiperSlide
+              className="flex gap-36 w-full items-center 2xl:gap-7 2xl:mr-4 2xl:ml-4"
+              key={project.id}
+            >
+              <ProjectCard
+                frontCover={project.frontCover}
+                projectName={project.name}
+                technologiesUsed={project.technologies}
+                description={project.description}
+              />
+            </SwiperSlide>
+          )
+        })}
       </Swiper>
     </div>
   )

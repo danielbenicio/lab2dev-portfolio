@@ -1,4 +1,7 @@
-import React, { useEffect } from 'react'
+import { GetServerSideProps } from 'next'
+import { useEffect } from 'react'
+import { v4 as uuidv4 } from 'uuid'
+import axios from 'axios'
 
 import { Header } from '../components/sections/header'
 import { IntroductionContainer } from '../components/sections/introduction-container'
@@ -8,7 +11,13 @@ import { TechnologiesContainer } from '../components/sections/ technologies-cont
 import { PortfolioContainer } from '../components/sections/portfolio-container'
 import { Footer } from '../components/sections/footer'
 
-const Home: React.FC = () => {
+import { GoogleSheetResponse } from '../model/GoogleSheetResponse'
+
+interface HomeProps {
+  projects: GoogleSheetResponse[]
+}
+
+export default function Home({ projects }: HomeProps) {
   useEffect(() => {
     setTimeout(() => {
       location.hash = ''
@@ -16,6 +25,7 @@ const Home: React.FC = () => {
     }, 20)
   }, [])
 
+  console.log(projects)
   return (
     <>
       <div className="2xl:px-20 px-36 pt-10">
@@ -25,10 +35,30 @@ const Home: React.FC = () => {
         <CompaniesContainer />
         <TechnologiesContainer />
       </div>
-      <PortfolioContainer />
+      <PortfolioContainer projects={projects} />
       <Footer />
     </>
   )
 }
 
-export default Home
+export const getServerSideProps: GetServerSideProps = async () => {
+  const response = await axios
+    .get('https://sheetdb.io/api/v1/6oksumgm1riyo')
+    .then((response) => response.data)
+
+  const projects = response.map((project: GoogleSheetResponse) => {
+    return {
+      id: uuidv4(),
+      name: project.name,
+      frontCover: project.frontCover,
+      technologies: project.technologies,
+      description: project.description,
+    }
+  })
+
+  return {
+    props: {
+      projects,
+    },
+  }
+}
