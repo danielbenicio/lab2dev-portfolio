@@ -12,8 +12,16 @@ import { Footer } from '../components/sections/footer'
 
 import { GoogleSheetResponse } from '../model/GoogleSheetResponse'
 
+export interface ProjectsProps {
+  id: string
+  name: string
+  frontCover: string
+  technologies: string
+  description: string
+}
+
 interface HomeProps {
-  projects: GoogleSheetResponse[]
+  projects: ProjectsProps[]
 }
 
 export default function Home({ projects }: HomeProps) {
@@ -24,7 +32,6 @@ export default function Home({ projects }: HomeProps) {
     }, 20)
   }, [])
 
-  console.log(projects)
   return (
     <>
       <div className="2xl:px-20 px-36 pt-10">
@@ -46,11 +53,16 @@ export const getStaticProps: GetStaticProps = async () => {
     .then((response) => response.data)
 
   const projects = response.map((project: GoogleSheetResponse) => {
+    const splitString = project.technologies.split(',')
+    const arrayString = Array.from(splitString)
+    const lastItem = arrayString[arrayString.length - 1]
+    arrayString.pop()
+
     return {
       id: project.id,
       name: project.name,
       frontCover: project.frontCover,
-      technologies: project.technologies,
+      technologies: arrayString.toString() + ' & ' + lastItem,
       description: project.description,
     }
   })

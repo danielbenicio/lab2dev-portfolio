@@ -11,10 +11,10 @@ import { FreeMode, Pagination } from 'swiper'
 
 import { ProjectCard } from '../project-card'
 
-import { GoogleSheetResponse } from '../../model/GoogleSheetResponse'
+import { ProjectsProps } from '../../pages'
 
 interface PortfolioContainerProps {
-  projects: GoogleSheetResponse[]
+  projects: ProjectsProps[]
 }
 
 export const PortfolioContainer: React.FC<PortfolioContainerProps> = ({
@@ -46,6 +46,7 @@ export const PortfolioContainer: React.FC<PortfolioContainerProps> = ({
               key={project.id}
             >
               <ProjectCard
+                projectId={project.id}
                 frontCover={project.frontCover}
                 projectName={project.name}
                 technologiesUsed={project.technologies}
