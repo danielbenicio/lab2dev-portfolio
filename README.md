@@ -11,7 +11,7 @@ This application was made in order to show the Project Portfolio of the company 
 ## Preview
   <img  src="./.github/assets/project-information.png" >
 
-  You can see more in the  [official website](lab2dev-portfolio.vercel.app)
+  You can see more in the  [official website]( https://lab2dev-portfolio.vercel.app/)
 
 ## Technologies
 
