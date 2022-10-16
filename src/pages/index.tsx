@@ -1,13 +1,12 @@
-import { GetServerSideProps } from 'next'
+import { GetStaticProps } from 'next'
 import { useEffect } from 'react'
-import { v4 as uuidv4 } from 'uuid'
 import axios from 'axios'
 
-import { Header } from '../components/sections/header'
+import { Header } from '../components/sections/main-header'
 import { IntroductionContainer } from '../components/sections/introduction-container'
 import { GoldPartnerContainer } from '../components/sections/gold-partner-container'
 import { CompaniesContainer } from '../components/sections/companies-carousel'
-import { TechnologiesContainer } from '../components/sections/ technologies-container'
+import { TechnologiesContainer } from '../components/sections/technologies-container'
 import { PortfolioContainer } from '../components/sections/portfolio-container'
 import { Footer } from '../components/sections/footer'
 
@@ -41,14 +40,14 @@ export default function Home({ projects }: HomeProps) {
   )
 }
 
-export const getServerSideProps: GetServerSideProps = async () => {
+export const getStaticProps: GetStaticProps = async () => {
   const response = await axios
     .get('https://sheetdb.io/api/v1/6oksumgm1riyo')
     .then((response) => response.data)
 
   const projects = response.map((project: GoogleSheetResponse) => {
     return {
-      id: uuidv4(),
+      id: project.id,
       name: project.name,
       frontCover: project.frontCover,
       technologies: project.technologies,
