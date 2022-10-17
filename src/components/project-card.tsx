@@ -42,7 +42,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
           <a
             className="flex justify-center items-center gap-4 w-[25.4rem] py-4 border rounded-sm
             transition-color duration-500 hover:bg-lab2dev-purple-900 hover:rounded hover:text-white
-            2xl:py-3 2xl:text-sm fixed bottom-14 2xl:bottom-16 2xl:w-[23.8rem]"
+            2xl:py-4 2xl:text-sm fixed bottom-14 2xl:bottom-16 2xl:w-[23.8rem]"
           >
             <span>Mais informações</span>
             <ArrowRight size={20} />

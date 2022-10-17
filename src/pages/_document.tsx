@@ -1,7 +1,7 @@
 import React from 'react'
 import { Html, Head, Main, NextScript } from 'next/document'
 
-const pages: React.FC = () => {
+const Document: React.FC = () => {
   return (
     <Html className="scroll-smooth">
       <Head>
@@ -25,4 +25,4 @@ const pages: React.FC = () => {
   )
 }
 
-export default pages
+export default Document
