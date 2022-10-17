@@ -1,9 +1,9 @@
 import React from 'react'
 import { Html, Head, Main, NextScript } from 'next/document'
 
-const pages: React.FC = () => {
+const Document: React.FC = () => {
   return (
-    <Html>
+    <Html className="scroll-smooth">
       <Head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link
@@ -25,4 +25,4 @@ const pages: React.FC = () => {
   )
 }
 
-export default pages
+export default Document

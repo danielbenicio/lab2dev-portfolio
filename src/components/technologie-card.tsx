@@ -4,7 +4,7 @@ import Image from 'next/future/image'
 import { TECHNOLOGIES_TYPES } from '../shared/TECHNOLOGIES_TYPES'
 
 interface TechnologieCardProps {
-  technologieName: 'Node JS' | 'Python' | 'SAP UI5' | 'React JS'
+  technologieName: 'Next JS' | 'React Native' | 'SAP UI5' | 'UX/UI Design'
   description: string
 }
 

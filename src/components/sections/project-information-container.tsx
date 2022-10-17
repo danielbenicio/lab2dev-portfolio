@@ -24,7 +24,7 @@ export const ProjectInformationContainer: React.FC<
           {project.name}
         </h1>
         <a
-          className="flex justify-center items-center gap-4 w-[25.4rem] py-4 shadow-button rounded-sm
+          className="flex justify-center items-center gap-4 w-[22rem] py-4 shadow-button rounded-sm
           2xl:py-3 2xl:w-64 2xl:text-sm transition-color duration-200 hover:bg-slate-100"
           href={project.linkFigma}
           target="_blank"
@@ -58,7 +58,7 @@ export const ProjectInformationContainer: React.FC<
                     </Tooltip.Trigger>
                     <Tooltip.Content
                       side="bottom"
-                      className="px-2 py-1 rounded border text-xs mt-1"
+                      className="px-2 py-1 rounded border text-xs mt-2"
                       sideOffset={0.1}
                     >
                       <span className="opacity-70 font-semibold">
