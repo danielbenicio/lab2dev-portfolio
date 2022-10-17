@@ -50,7 +50,7 @@ export default function ProjectInformation({
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const data = await axios
-    .get('https://sheetdb.io/api/v1/6oksumgm1riyo')
+    .get('https://sheetdb.io/api/v1/ts0l2t3yjx9sx')
     .then((response) => response.data)
 
   const paths = data.map((project: GoogleSheetResponse) => {
@@ -68,7 +68,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
 
   const data = await axios
     .get(
-      `https://sheetdb.io/api/v1/6oksumgm1riyo/search?id=${id}&casesensitive=true`,
+      `https://sheetdb.io/api/v1/ts0l2t3yjx9sx/search?id=${id}&casesensitive=true`,
     )
     .then((response) => response.data)
 
@@ -99,6 +99,6 @@ export const getStaticProps: GetStaticProps = async (context) => {
     props: {
       project: project[0],
     },
-    revalidate: 60 * 60 * 60 * 60,
+    revalidate: 1440 * 60, // 1 dia
   }
 }

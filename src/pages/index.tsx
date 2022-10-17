@@ -49,7 +49,7 @@ export default function Home({ projects }: HomeProps) {
 
 export const getStaticProps: GetStaticProps = async () => {
   const response = await axios
-    .get('https://sheetdb.io/api/v1/6oksumgm1riyo')
+    .get('https://sheetdb.io/api/v1/ts0l2t3yjx9sx')
     .then((response) => response.data)
 
   const projects = response.map((project: GoogleSheetResponse) => {
@@ -71,6 +71,6 @@ export const getStaticProps: GetStaticProps = async () => {
     props: {
       projects,
     },
-    revalidate: 60 * 60 * 60 * 60,
+    revalidate: 1440 * 60, // 1 dia
   }
 }
