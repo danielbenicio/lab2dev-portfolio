@@ -20,6 +20,7 @@ const Document: React.FC = () => {
       <body className="bg-background">
         <Main />
         <NextScript />
+        <div id="root"></div>
       </body>
     </Html>
   )
