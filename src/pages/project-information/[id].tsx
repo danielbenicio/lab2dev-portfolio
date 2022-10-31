@@ -37,14 +37,6 @@ export default function ProjectInformation({
   const [modalIsOpen, setModalIsOpen] = useState<boolean>(false)
   const [imageToOpen, setImageToOpen] = useState<string[]>([])
 
-  useEffect(() => {
-    document.body.style.overflowY = 'hidden'
-
-    return () => {
-      document.body.style.overflowY = 'auto'
-    }
-  }, [])
-
   const handleOpenModal = () => {
     setModalIsOpen(true)
   }

@@ -49,7 +49,7 @@ export const ImageModal: React.FC<ImageModalProps> = ({
       }}
     >
       <button
-        className="relative left-2/4 bottom-5 transition-color duration-200 hover:text-red-450 2xl:bottom-8"
+        className="relative left-2/4 transition-color duration-200 hover:text-red-450 2xl:bottom-8"
         onClick={onCloseModal}
       >
         <X size={24} />
